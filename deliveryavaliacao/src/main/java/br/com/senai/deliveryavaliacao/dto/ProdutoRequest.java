@@ -2,6 +2,7 @@ package br.com.senai.deliveryavaliacao.dto;
 
 import java.math.BigDecimal;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,6 +12,7 @@ public class ProdutoRequest {
     private String nome;
 
     @NotNull (message = "Informe o preço do produto")
+    @Min (value = 1, message = "O preço do produto deve ser maior que zero")
     private BigDecimal preco;
 
     @NotNull (message = "Informe o id do restaurante")

@@ -28,11 +28,6 @@ public class ProdutoService {
         if (restauranteExists.isEmpty()) {
             return Optional.empty();
         }
-         
-        Boolean precoMaiorQueZero = produtoRequest.getPreco() != null && produtoRequest.getPreco().compareTo(new java.math.BigDecimal("0.00")) > 0;
-        if (!precoMaiorQueZero) {
-            return Optional.empty();
-        }
 
         produto.setNome(produtoRequest.getNome());
         produto.setPreco(produtoRequest.getPreco());
@@ -79,4 +74,4 @@ public class ProdutoService {
     }
 }
 
-    
+     
